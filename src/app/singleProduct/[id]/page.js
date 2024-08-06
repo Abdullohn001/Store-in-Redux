@@ -11,14 +11,10 @@ async function SingleProduct({ params }) {
   const data = await getData(params.id);
 
   return (
-    <div className="product-details flex max-w-6xl gap-12 mx-auto p-4">
-      <div className="product-image border rounded-lg">
+    <div className="product-details lg:flex flex-col justify-center  flex max-w-6xl gap-12 mx-auto p-4">
+      <div className="product-image  lg:w-[500px] lg:h-[400px] border rounded-lg">
         <figure>
-          <img
-            className="w-[800px] h-[400px]"
-            src={data.thumbnail}
-            alt={data.title}
-          />
+          <img className="" src={data.thumbnail} alt={data.title} />
         </figure>
       </div>
       <div className="product-info gap-16">
@@ -27,8 +23,8 @@ async function SingleProduct({ params }) {
         <p className="product-category mt-5 ">Category: {data.category}</p>
         <p className="product-price mt-5 text-xl">Price: ${data.price}</p>
         <p className="product-stock mt-5 text-xl">Stock: {data.stock}</p>
-        <div className="flex  items-center mt-5">
-          <p className="product-rating text-xl">Rating:</p>
+        <div className="flex items-center mt-5">
+          <p className="product-rating  text-xl">Rating:</p>
           {[...Array(5)].map((_, index) => (
             <svg
               key={index}
